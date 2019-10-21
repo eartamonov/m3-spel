@@ -19,6 +19,12 @@ public class Country implements Serializable {
 	@Value("RU")
 	private String codeName;
 
+	@Value("#{languageBean}")
+	private Language language;
+
+	@Value("#{languageBean.name}")
+	private String languageName;
+
 	public Country() {
 	}
 
@@ -58,7 +64,7 @@ public class Country implements Serializable {
 	}
 
 	public String toString() {
-		return id + ". " + name + " (" + codeName + ")";
+		return id + ". " + name + " (" + codeName + ")" + "language: " + language;
 	}
 
 	public boolean equals(Object o) {
