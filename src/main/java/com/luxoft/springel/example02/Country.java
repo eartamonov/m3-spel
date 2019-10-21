@@ -2,27 +2,18 @@ package com.luxoft.springel.example02;
 
 import java.io.Serializable;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
-@Component("countryBean")
 public class Country implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Value("1")
 	private int id;
 
-	@Value("Russia")
 	private String name;
 
-	@Value("RU")
 	private String codeName;
 
-	@Value("#{languageBean}")
 	private Language language;
 
-	@Value("#{languageBean.name}")
 	private String languageName;
 
 	public Country() {
@@ -39,7 +30,23 @@ public class Country implements Serializable {
 		this.codeName = codeName;
 	}
 
-	public int getId() {
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
+
+    public String getLanguageName() {
+        return languageName;
+    }
+
+    public void setLanguageName(String languageName) {
+        this.languageName = languageName;
+    }
+
+    public int getId() {
 		return id;
 	}
 
